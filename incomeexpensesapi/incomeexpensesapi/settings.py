@@ -49,12 +49,12 @@ INSTALLED_APPS = [
 
 ]
 
-SWAGGER_SETTINGS={
-    'SECURITY_DEFINITIONS':{
-        'Bearer':{
-            'type':'apiKey',
-            'name':'Authorization',
-            'in':'header'
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
         }
     }
 }
@@ -101,6 +101,9 @@ DATABASES = {
 }
 
 REST_FRAMEWORK = {
+    
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5,
     'NON_FIELD_ERRORS_KEY': 'errors',
     'DEFAULT_AUTHENTICATION_CLASSES': (
 
