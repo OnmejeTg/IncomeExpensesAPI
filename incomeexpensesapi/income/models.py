@@ -4,17 +4,16 @@ from authentication.models import User
 
 # Create your models here.
 
-class Expense(models.Model):
+class Income(models.Model):
 
-    CATEGORY_OPTIONS = [
-        ('ONLINE_SERVICES', 'ONLINE_SERVICES'),
-        ('FOOD', 'FOOD'),
-        ('RENT', 'RENT'),
-        ('TRAVEL', 'TRAVEL'),
+    SOURCE_OPTIONS = [
+        ('SALARY', 'SALARY'),
+        ('BUSINESS', 'BUSINESS'),
+        ('SIDE_HUSTLE', 'SIDE_HUSTLE'),
         ('OTHER', 'OTHER'),
     ]
 
-    category = models.CharField(choices=CATEGORY_OPTIONS, max_length=255)
+    source = models.CharField(choices=SOURCE_OPTIONS, max_length=255)
     amount = models.DecimalField(max_digits=10, decimal_places=2, max_length=255)
     description = models.TextField()
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
@@ -25,3 +24,4 @@ class Expense(models.Model):
 
     def __str__(self):
         return str(self.owner)+"'s income"
+
