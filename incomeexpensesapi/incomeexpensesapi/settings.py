@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'expenses',
     'income',
     'drf_yasg',
+    'userstats',
 
 ]
 

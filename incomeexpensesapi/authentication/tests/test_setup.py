@@ -14,10 +14,6 @@ class TestSetUp(APITestCase):
             'username':self.fake.last_name(),
             'password':self.fake.password(),
         }
-        import pdb
-        pdb.set_trace()
-        return  super().setUp()
-
     def tearDown(self):
         return super().tearDown()
 
